@@ -46,9 +46,46 @@ abs(15);
 function greater_or_equal(x, y){
     return ! (x < y);  
     // paréntesis secesarios porque ! al 
-    // ser op unario tiene mayor precencia
+    // ser op unario tiene mayor precedencia
 }
 
 
 greater_or_equal(3+2, 4+1);
 
+
+// 1.2
+(5 + 4 + (2 - ( 3 - ( 6 + 4/5)))) / (3 * (6 - 2) * (2 - 7));
+
+// 1.3
+function e13(x, y, z){
+    return x > y && x > z 
+    ? y > z 
+        ? sum_of_squares(x, y)
+        : sum_of_squares(x, z)
+    : x > z
+        ? sum_of_squares(y, x)
+        : sum_of_squares(y, z);
+}
+
+e13(1, 2, 3);
+
+
+// 1.4
+function plus(a, b) { return a + b; }
+function minus(a, b) { return a - b; }
+function a_plus_abs_b(a, b) {
+    return (b >= 0 ? plus : minus)(a,b);
+}
+
+a_plus_abs_b(2, 20);
+a_plus_abs_b(2, -20);
+
+
+// 1.5
+function p() { return p(); }
+
+function test(x, y) {
+    return x === 0 ? 0 : y;
+}
+
+test(0, p());
